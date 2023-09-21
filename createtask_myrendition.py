@@ -7,9 +7,6 @@ thing = ['thing',"a basket of fruit", "a woman", "a man", "cats and dogs", "tech
 
 #create a list to insert the values that you choose, the numbers are place holders
 my_parameters = [1,2,3]
-taste = ['taste','good','bad', 'bitter', 'sweet', 'sour']
-sound = ['sound','loud', 'quiet', 'sharp', 'mellow', 'angry']
-sight = ['sight','fun', 'boring', 'pretty', 'nice', 'terrible']
 
 #determine the output of the function
 random_idea = input("Would you like to generate something random to draw? Yes/No")
