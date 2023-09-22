@@ -1,14 +1,17 @@
+#This program randomly generates a color, style, and thing to draw based on user input. 
+# This tool can help artists warm up, or even for those that have trouble thinking of things to draw.
+
 #lists input into the call function
 #the first value in the list is the name of the list (which is called in the function)
-#the rest of the values are whatever random options you want for that category
-color = ['color',"red", "orange", "yellow", "green", "blue", "purple"]
-style = ['style',"comic", "realistic", "painterly", "anime", ""]
-thing = ['thing',"a basket of fruit", "a woman", "a man", "cats and dogs", "technology from the year 2100"]
-
+categories = {
+    1: ['color',"red", "orange", "yellow", "green", "blue", "purple"],
+    2: ['style',"comic", "realistic", "painterly", "anime", ""],
+    3: ['thing',"a basket of fruit", "a woman", "a man", "cats and dogs", "technology from the year 2100"]
+}
 #create a list to insert the values that you choose, the numbers are place holders
 my_parameters = [1,2,3]
 
-#determine the output of the function
+# conditional statement
 random_idea = input("Would you like to generate something random to draw? Yes/No")
 
 #set the variables to be used in the function
@@ -16,26 +19,20 @@ random_idea = input("Would you like to generate something random to draw? Yes/No
 #p1, p2, and p3 are the list inserted
 #your_parameters is the list to insert the values you choose
 
-def randomization(random_idea,p1,p2,p3,your_parameters):
-    if random_idea == "Yes":
-        #ask the user for a number which will be the index of the first list (p1)
-        #insert the value from above into the "empty" function at position 0
-        i1 = int(input(f"Choose a number between 1 and 5 to get a random {p1[0]}!"))
-        your_parameters.insert(0,p1[i1])
+def randomization(random_idea,dictionary,your_parameters):
+    for v in range(3):
+        if random_idea == "Yes":category[p1][1]
+            #ask the user for a number (which will be the index of the list mentioned)
+            #insert the value from above into the "empty" function at position 0
+            iv = int(input(f"Choose a number between 1 and 5 to get a random {categories[pv][0]}!"))
+            your_parameters.insert(0,p1[iv])
+            v += 1
+            pv = 
 
-        i2 = int(input(f"Choose another number between 1 and 5 to get a random {p2[0]}!"))
-        your_parameters.insert(1,p2[i2])
+    #print the 3 randomly chosen factors
+            print(f"Your random categories are {your_parameters}. Have fun drawing!")
+        else:
+            print("That's fine. Maybe next time!")
 
-        i3 = int(input(f"Choose a number between 1 and 5 to get a random {p3[0]}!"))
-        your_parameters.insert(2,p3[i3])
-
-#print the 3 randomly chosen factors
-        print(f"Your random {p1[0]} is {your_parameters[0]}." 
-        f" Your random {p2[0]} is {your_parameters[1]}." 
-        f" Your random {p3[0]} is {your_parameters[2]}.")
-    else:
-        print("That's fine. Maybe next time!")
-#use random_idea from the prompt above the function
-#use three specified lists of values
-#enter a list to append
-randomization(random_idea,color,style,thing,my_parameters)
+#call the function
+randomization(random_idea,categories,my_parameters)
